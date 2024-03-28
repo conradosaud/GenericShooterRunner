@@ -17,8 +17,10 @@ public class PlayerShooter : MonoBehaviour
 
     void Atirar()
     {
-        Transform tiro = Instantiate(containerTiro, prefabTiro);
+        Transform tiro = Instantiate(prefabTiro);
         tiro.position = transform.position;
+        tiro.parent = containerTiro;
+
         Invoke("Atirar", intervaloTiro);
     }
 
